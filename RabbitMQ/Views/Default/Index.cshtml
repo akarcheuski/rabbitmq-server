@@ -1,0 +1,67 @@
+﻿@model  RabbitMQ.Models.MainViewModel
+@{
+    ViewBag.Title = "Test";
+}
+@using (Html.BeginForm("SendMessages", "Default", FormMethod.Post))
+{
+    <div class="container-fluid" style="width:40%">
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.Label("Clients to compare")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <input type="text" id="amountOfTime" placeholder="Input amount of time in seconds" />
+            </div>
+            @for (int i = 0; i < 2; i++)
+            {
+                @Html.Partial("_DdlClients", Model, new ViewDataDictionary { { "id", "lstClient" + i.ToString() } });
+            }
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" id="messagesQuantity" placeholder="Input messages quantity" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="button" value="Start" id="btnStart" class="btn btn-primary btn-sm" />
+            </div>
+            <div class="col-md-8">
+                <div id="error"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="width:40%">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="quant"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="messagesQuantity1"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="messagesQuantity2"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="sendingTime"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="sendingTime1"></div>
+            </div>
+        </div>
+        <div id="row3" class="row">
+            <div class="col-md-6">
+                <div id="consumingTime"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="consumingTime1"></div>
+            </div>
+        </div>
+    </div>
+}
+
