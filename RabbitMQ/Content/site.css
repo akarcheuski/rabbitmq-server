@@ -1,0 +1,8 @@
+﻿[class*="col-"] {
+    background-clip: padding-box;
+    border: 10px solid transparent;
+}
+
+.col-wide {
+    width : "80%";
+}
