@@ -1,0 +1,13 @@
+﻿@model  RabbitMQ.Models.MainViewModel
+
+    <div class="col-lg-4">
+        @Html.DropDownListFor(
+                x => x.ClientId,
+                new SelectList(Model.Clients, "Id", "Name"), new
+                {
+                    @id = "lstClient1",
+                    @style = "width: 150px;"
+                }
+                )
+        @Html.ValidationMessageFor(x => x.ClientId)
+    </div>
