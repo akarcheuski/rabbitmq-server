@@ -58,8 +58,7 @@ namespace RabbitMQ.Repository
             _model.BasicQos(0, 1, false);
         }
 
-        public IEnumerable<Models.Client> GetClients() => new List<Models.Client> { new Models.Client () { Id = "1", Name = "C#" },
-                                                                                    new Models.Client() { Id = "2", Name = "SQL Server" }};
+        public IEnumerable<Models.Client> GetClients() => new List<Models.Client> { new Models.Client () { Id = "1", Name = "C#" }};
 
         public object Send(string filter, bool isTime)
         {
